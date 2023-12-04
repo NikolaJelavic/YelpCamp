@@ -16,9 +16,9 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // useFindAndModify: false
 });
 
 const db = mongoose.connection;
