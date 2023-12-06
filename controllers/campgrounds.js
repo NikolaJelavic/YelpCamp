@@ -6,7 +6,7 @@ const { cloudinary } = require("../cloudinary");
 
 
 module.exports.index = async (req, res) => {
-    const campgrounds = await Campground.find({});
+    const campgrounds = await Campground.find({}).populate('popupText');
     res.render('campgrounds/index', { campgrounds })
 }
 
@@ -75,4 +75,4 @@ module.exports.deleteCampground = async (req, res) => {
     await Campground.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted campground')
     res.redirect('/campgrounds');
-} 
+}

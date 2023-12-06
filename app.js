@@ -2,6 +2,7 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -20,9 +21,10 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
-    // useNewUrlParser: true, // deprecated option
-    // useUnifiedTopology: true, // deprecated option
-    // useFindAndModify: false  // not supported
+    // useNewUrlParser: true,
+    // useCreateIndex: true,
+    // useUnifiedTopology: true,
+    // useFindAndModify: false
 });
 
 const db = mongoose.connection;
